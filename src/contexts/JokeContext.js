@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
+import {apiJoke} from "../api/joke";
 
 const JokeContext = createContext(undefined);
 
@@ -8,11 +9,10 @@ const JokeProvider = ({ children }) => {
 
     const getJoke = async () => {
         setIsFetching(true);
-        const response = await fetch('https://api.chucknorris.io/jokes/random')
-        const data = await response.json();
-
+        const data = await apiJoke.getRandom();
+        
         if (data) {
-            setJoke(data.value);
+            setJoke(data);
             setIsFetching(false);
         }
     }
