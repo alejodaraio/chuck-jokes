@@ -4,7 +4,7 @@ import {apiJoke} from "../api/joke";
 const JokeContext = createContext(undefined);
 
 const JokeProvider = ({ children }) => {
-    const [isFetching, setIsFetching] = useState(false);
+    const [isFetching, setIsFetching] = useState(true);
     const [joke, setJoke] = useState(null);
 
     const getJoke = async () => {
