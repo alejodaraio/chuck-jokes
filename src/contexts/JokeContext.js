@@ -9,9 +9,7 @@ const JokeProvider = ({ children }) => {
 
   const getJoke = async () => {
     const data = await apiJoke.getRandom();
-    if (data) {
-      setJoke(data);
-    }
+    setJoke(data);
   };
 
   const state = [{ joke }, { getJoke }];
@@ -20,11 +18,7 @@ const JokeProvider = ({ children }) => {
 };
 
 const useJoke = () => {
-  const context = useContext(JokeContext);
-  if (context === undefined) {
-    throw new Error("useJoke can only be used inside JokeContext");
-  }
-  return context;
+  return useContext(JokeContext);
 };
 
 JokeProvider.propTypes = {

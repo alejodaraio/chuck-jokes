@@ -1,7 +1,6 @@
 import { render, waitFor, screen } from "@testing-library/react";
 import Joke from "./Joke";
 import { JokeProvider } from "../contexts/JokeContext";
-import { Suspense } from "react";
 
 describe("Joke Container test.", () => {
   const chuckApiMock = {
