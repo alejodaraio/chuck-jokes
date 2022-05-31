@@ -9,7 +9,7 @@ const Joke = React.lazy(() => import("./Joke"));
 export default () => {
   return (
     <div>
-      <Suspense fallback={<p>Suspense loading components....</p>}>
+      <Suspense fallback={<p>Loading</p>}>
         <JokeProvider>
           <Joke />
         </JokeProvider>

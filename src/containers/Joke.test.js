@@ -1,6 +1,7 @@
 import { render, waitFor, screen } from "@testing-library/react";
 import Joke from "./Joke";
 import { JokeProvider } from "../contexts/JokeContext";
+import { Suspense } from "react";
 
 describe("Joke Container test.", () => {
   const chuckApiMock = {
@@ -12,19 +13,6 @@ describe("Joke Container test.", () => {
   beforeEach(() => {
     fetch.resetMocks();
     fetchMock.doMock();
-  });
-
-  it("should render a loading screen.", async () => {
-    // Mock fetch api
-    fetch.mockResponseOnce(JSON.stringify(null));
-
-    render(
-      <JokeProvider>
-        <Joke />
-      </JokeProvider>
-    );
-
-    await waitFor(() => expect(screen.getByText("Loading")).toBeTruthy());
   });
 
   it("should render a Joke sentence.", async () => {
