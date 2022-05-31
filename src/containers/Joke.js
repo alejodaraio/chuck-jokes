@@ -3,13 +3,11 @@ import { useJoke } from "../contexts/JokeContext";
 import Joke from "../components/Joke";
 
 export default () => {
-    const [ { isFetching, joke } , { getJoke } ] = useJoke();
+  const [{ isFetching, joke }, { getJoke }] = useJoke();
 
-    useEffect(() => {
-        getJoke();
-    }, []);
+  useEffect(() => {
+    getJoke();
+  }, []);
 
-    return (
-        isFetching ? <div>Loading</div> : <Joke value={joke} />
-    )
-}
+  return isFetching ? <div>Loading</div> : <Joke value={joke} />;
+};

@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 
-export default ({value}) => {
-    return (
-        <div>
-            {value}
-        </div>
-    )
-}
+const Joke = ({ value }) => {
+  return (
+    <Fragment>
+      <h1>Chuck says:</h1>
+      {value}
+    </Fragment>
+  );
+};
+
+Joke.propTypes = {
+  value: PropTypes.string,
+};
+
+export default Joke;

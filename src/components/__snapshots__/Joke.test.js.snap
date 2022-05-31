@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Joke Component test. should match with Snapshot. 1`] = `
-<div>
-  Chuck norris mock
-</div>
+Array [
+  <h1>
+    Chuck says:
+  </h1>,
+  "Chuck norris mock",
+]
 `;
