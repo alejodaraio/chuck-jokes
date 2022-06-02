@@ -1,11 +1,14 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2022": true
     },
     "extends": [
         "plugin:react/recommended", 
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -15,10 +18,13 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "@typescript-eslint"
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
-        "react/display-name": "off"
+        "react/display-name": "off",
+        "no-underscore-dangle": "error",
+        "@typescipt-eslint/interface-name-prefix": ["always"]
     }
 }
